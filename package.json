@@ -1,7 +1,7 @@
 {
     "name": "ryanmeneses",
     "scripts": {
-        "dev": "nuxt",
+        "dev": "npx nuxi dev",
         "build": "nuxt build",
         "generate": "nuxt generate",
         "start": "nuxt start"
