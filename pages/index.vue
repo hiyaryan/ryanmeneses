@@ -14,7 +14,7 @@
       <h2>Portfolio</h2>
       <div class="portfolio">
         <div v-for="project in portfolio" :key="project.name">
-          <img :src="`@/assets/img/${project.thumbnail}`" :alt="project.thumbnail" />
+          <img :src="`@/assets/img/${project.thumbnail}`" alt="" />
           <h3>{{ project.name }}</h3>
           <p>{{ project.description }}</p>
         </div>
