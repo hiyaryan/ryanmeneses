@@ -29,7 +29,7 @@
     </div>
     <div class="footer" id="contact">
       <h2>Contact</h2>
-      <p>{{ contact }} <a href={{ linkedin }}>LinkedIn</a>.</p>
+      <p>{{ contact }} <a :href="`${linkedin}`" target="_blank">LinkedIn</a></p>
     </div>
   </div>
 </template>
