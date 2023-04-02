@@ -1,6 +1,6 @@
 <template>
   <div class="landing-page" id="home">
-    <NavBar />
+    <NavBar :pageContent="pageContent" />
     <div class="header">
       <h1>{{ name }}</h1>
       <h2>{{ title }}</h2>
@@ -35,26 +35,14 @@ export default {
     NavBar
   },
 
-  mounted() {
-    const navLinks = document.querySelectorAll('nav ul li a');
-
-    navLinks.forEach(link => {
-      link.addEventListener('click', event => {
-        event.preventDefault();
-        const targetId = event.target.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
-        const targetPosition = targetElement.offsetTop;
-
-        window.scrollTo({
-          top: targetPosition,
-          behavior: 'smooth'
-        });
-      });
-    });
-  },
-
   data() {
     return {
+      pageContent: [
+        { id: 'home', title: 'Home' },
+        { id: 'about', title: 'About' },
+        { id: 'projects', title: 'Projects' },
+        { id: 'contact', title: 'Contact' },
+      ],
       name: 'Ryan Meneses',
       title: 'Software Engineer',
       tagline: 'Passionate about solving problems that lead to a better world.',
