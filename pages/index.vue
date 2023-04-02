@@ -78,7 +78,7 @@ export default {
         }
       ],
       contact: 'Find me on ',
-      linkedin: 'https://www.linkedin.com/in/ryan-meneses-5b1b4b1b3/'
+      linkedin: 'https://www.linkedin.com/in/ryan-james-meneses-b6973a132'
     }
   }
 }
