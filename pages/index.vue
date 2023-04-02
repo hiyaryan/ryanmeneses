@@ -21,7 +21,7 @@
       <h2>Portfolio</h2>
       <div class="portfolio">
         <div v-for="project in portfolio" :key="project.name">
-          <img :src="project.thumbnail" alt="">
+          <img :src="`@/assets/img/${project.thumbnail}`" :alt="project.thumbnail" />
           <h3>{{ project.name }}</h3>
           <p>{{ project.description }}</p>
         </div>
@@ -62,18 +62,18 @@ export default {
       about: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus rhoncus ipsum sit amet laoreet maximus. Suspendisse vel lacinia ipsum. Duis ullamcorper est eget tellus pulvinar, vel malesuada tellus hendrerit. Nulla facilisi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus rhoncus ipsum sit amet laoreet maximus. Suspendisse vel lacinia ipsum. Duis ullamcorper est eget tellus pulvinar, vel malesuada tellus hendrerit. Nulla facilisi.',
       portfolio: [
         {
-          name: 'Project 1',
-          thumbnail: 'project-1-thumbnail.jpg',
+          name: 'SIMOC SAM',
+          thumbnail: 'project-1-thumbnail.png',
           description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus rhoncus ipsum sit amet laoreet maximus. Suspendisse vel lacinia ipsum. Duis ullamcorper est eget tellus pulvinar, vel malesuada tellus hendrerit. Nulla facilisi.',
         },
         {
-          name: 'Project 2',
-          thumbnail: 'project-2-thumbnail.jpg',
+          name: 'QCS Quantum Circuits',
+          thumbnail: 'project-2-thumbnail.png',
           description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus rhoncus ipsum sit amet laoreet maximus. Suspendisse vel lacinia ipsum. Duis ullamcorper est eget tellus pulvinar, vel malesuada tellus hendrerit. Nulla facilisi.',
         },
         {
-          name: 'Project 3',
-          thumbnail: 'project-3-thumbnail.jpg',
+          name: 'ryanmeneses.com',
+          thumbnail: 'project-3-thumbnail.png',
           description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus rhoncus ipsum sit amet laoreet maximus. Suspendisse vel lacinia ipsum. Duis ullamcorper est eget tellus pulvinar, vel malesuada tellus hendrerit. Nulla facilisi.',
         }
       ],
