@@ -85,11 +85,6 @@ export default {
 </script>
 
 <style>
-html {
-  background-color: #ececec;
-  scroll-behavior: smooth;
-}
-
 .landing-page {
   display: flex;
   flex-direction: column;
@@ -183,12 +178,6 @@ html {
   background-color: rgba(0, 0, 0, 0.825);
   margin-bottom: 30px;
   margin-top: 50px;
-}
-
-p {
-  font-size: 14px;
-  font-weight: 500;
-  color: rgba(0, 0, 0, 0.850);
 }
 
 .footer h2 {

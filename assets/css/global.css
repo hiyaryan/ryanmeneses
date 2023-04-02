@@ -1,0 +1,10 @@
+html {
+    background-color: #ececec;
+    scroll-behavior: smooth;
+}
+  
+p {
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.850);
+}
