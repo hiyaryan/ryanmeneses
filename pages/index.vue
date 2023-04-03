@@ -30,6 +30,7 @@
       <p>{{ contact }}
         <a :href="`${linkedin}`" target="_blank">LinkedIn</a> and <a :href="`${github}`" target="_blank">GitHub</a>
       </p>
+      <p>{{ year }}</p>
     </div>
   </div>
 </template>
@@ -38,7 +39,6 @@
 import NavBar from '~/components/NavBar.vue'
 
 export default {
-  // update the page title
   head() {
     return {
       title: 'Ryan Meneses'
@@ -76,12 +76,13 @@ export default {
         {
           name: 'My Website',
           thumbnail: 'project-3-thumbnail.png',
-          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus rhoncus ipsum sit amet laoreet maximus. Suspendisse vel lacinia ipsum. Duis ullamcorper est eget tellus pulvinar, vel malesuada tellus hendrerit. Nulla facilisi.',
+          description: "If you're looking at this website and it seems like it's not all put together, that's because I'm still working on it! You may see some Lorem Ipsum here and there but it's all part of the process. I've decided to build this website publicly so that I can share my journey. I'm excited to see where it takes me! :)",
         }
       ],
       contact: 'Find me on ',
       linkedin: 'https://www.linkedin.com/in/ryan-james-meneses-b6973a132',
       github: 'https://github.com/hiyaryan',
+      year: new Date().getFullYear()
     }
   }
 }
