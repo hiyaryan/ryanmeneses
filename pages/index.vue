@@ -11,14 +11,14 @@
       <h5> {{ location }} </h5>
       <p>{{ tagline }}</p>
     </div>
-    <div class="section" id="about">
+    <div class="section-about" id="about">
       <h2>About Me</h2>
-      <p>{{ about }}</p>
+      <p v-for="paragraph in about" :key="paragraph">{{ paragraph }}</p>
     </div>
     <div class="section" id="projects">
-      <h2>Portfolio</h2>
-      <div class="portfolio">
-        <div v-for="project in portfolio" :key="project.name">
+      <h2>Projects</h2>
+      <div class="projects">
+        <div v-for="project in projects" :key="project.name">
           <img :src="`/img/${project.thumbnail}`" alt="" />
           <h3>{{ project.name }}</h3>
           <p>{{ project.description }}</p>
@@ -61,8 +61,8 @@ export default {
       title: 'Software Engineer',
       tagline: 'Passionate about solving problems that lead to a better world.',
       location: 'San Francisco Bay Area',
-      about: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus rhoncus ipsum sit amet laoreet maximus. Suspendisse vel lacinia ipsum. Duis ullamcorper est eget tellus pulvinar, vel malesuada tellus hendrerit. Nulla facilisi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus rhoncus ipsum sit amet laoreet maximus. Suspendisse vel lacinia ipsum. Duis ullamcorper est eget tellus pulvinar, vel malesuada tellus hendrerit. Nulla facilisi.',
-      portfolio: [
+      about: ["Hello there! Thank you for visiting my website! My name is Ryan, and I'm a software engineer who is passionate about using technology to help solve big questions and push humanity towards its maximum potential.", "Ever since I was a kid, I've been fascinated by the mysteries of the universe and the big questions that we as humans seek to answer. And as I grew older, I realized that technology could play a crucial role in helping us unravel some of these mysteries and push the boundaries of what we thought was possible.", "In my career as a software engineer, I've been fortunate to work on some incredible projects with some amazing people who have only fueled my desire to work on these types of problems. One project, for instance, is all about pushing humanity closer towards becoming an interplanetary species, while another deals with humanity's ability to harness the computational power of the atomic world.", "What excites me most about my work is the potential for technology to help us unlock new insights and discoveries that can push humanity towards its maximum potential. Whether we're developing new algorithms to help us understand the fundamental workings of the universe or creating tools to help us harness the power of artificial intelligence, I believe that we can make a real difference by working together to push the boundaries of what we thought was possible.", "When I'm not coding, I love exploring these spaces through the lenses of those outside of my industry. I'm very curious to see the workings and ideas of those approaching these problems from different angles. I'm also very interested in hearing the kinds of impacts new technologies and discoveries might pose on humanity alike.", "Overall, I'm thrilled to be a part of a community of thinkers and doers who are just as passionate as I am about using technology to make a positive impact on the world. So, let's join forces and keep pushing the boundaries together!"],
+      projects: [
         {
           name: 'SIMOC SAM',
           thumbnail: 'project-1-thumbnail.png',
@@ -123,13 +123,20 @@ export default {
   margin-top: 50px;
 }
 
-.portfolio {
+.section-about {
+  font-size: 14px;
+  font-weight: 500;
+  max-width: 800px;
+  color: rgba(0, 0, 0, 0.850);
+}
+
+.projects {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
 
-.portfolio div {
+.projects div {
   text-align: center;
   align-items: center;
   word-wrap: break-word;
@@ -137,7 +144,7 @@ export default {
   margin-bottom: 20px;
 }
 
-.portfolio img {
+.projects img {
   width: 100px;
   height: 100px;
   border-radius: 50%;
