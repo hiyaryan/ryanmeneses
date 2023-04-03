@@ -35,6 +35,13 @@
 import NavBar from '~/components/NavBar.vue'
 
 export default {
+  // update the page title
+  head() {
+    return {
+      title: 'Ryan Meneses'
+    }
+  },
+
   components: {
     NavBar
   },
