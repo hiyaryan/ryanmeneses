@@ -80,7 +80,7 @@ export default {
         }
       ],
       contact: 'Find me on ',
-      linkedin: 'https://www.linkedin.com/in/ryan-james-meneses-b6973a132',
+      linkedin: 'https://www.linkedin.com/in/ryan-james-meneses',
       github: 'https://github.com/hiyaryan',
       year: new Date().getFullYear()
     }
