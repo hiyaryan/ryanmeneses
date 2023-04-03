@@ -1,4 +1,7 @@
 <template>
+  <Head>
+    <Title>Ryan Meneses</Title>
+  </Head>
   <div class="landing-page" id="home">
     <NavBar :pageContent="pageContent" />
     <div class="header">
