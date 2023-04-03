@@ -137,6 +137,23 @@ export default {
   justify-content: space-between;
 }
 
+@media only screen and (max-width: 800px) {
+  .projects {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .projects img {
+    width: 100%;
+    margin: 10px;
+  }
+
+  .projects p {
+    /* TODO: Fix this so that when the projects stack the text gets larger  */
+  }
+}
+
 .projects div {
   text-align: center;
   align-items: center;
