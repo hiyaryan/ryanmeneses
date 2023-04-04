@@ -24,28 +24,32 @@ export default {
 .navbar {
     background-color: rgba(0, 0, 0, 0.850);
     padding: 10px 20px;
-    display: flex;
-    justify-content: flex-end;
     width: 100%;
     position: fixed;
     top: 0;
     left: 0;
 }
 
-.navbar ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    width: 100%;
+@media screen and (min-width: 475px) {
+    .navbar ul {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        justify-content: space-evenly;
+
+    }
 }
 
-.navbar li {
-    background-color: rgba(0, 0, 0, 0.150);
-    border-radius: 5px;
-    margin-right: 10px;
+@media screen and (max-width: 475px) {
+    .navbar ul {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
 }
 
 .navbar a {
