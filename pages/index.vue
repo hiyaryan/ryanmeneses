@@ -15,10 +15,10 @@
       <h2>About Me</h2>
       <p v-for="paragraph in about" :key="paragraph">{{ paragraph }}</p>
     </div>
-    <div class="section" id="projects">
+    <div class="section-projects" id="projects">
       <h2>Projects</h2>
-      <div class="projects">
-        <div v-for="project in projects" :key="project.name">
+      <div>
+        <div v-for="project in projects" :key="project.name" class="project">
           <img :src="`/img/${project.thumbnail}`" alt="" />
           <h3>{{ project.name }}</h3>
           <p>{{ project.description }}</p>
@@ -89,15 +89,16 @@ export default {
 </script>
 
 <style>
+/* Document */
 .landing-page {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   padding: 25px;
   font-family: 'Calibri', sans-serif;
 }
 
+/* Header */
 .header {
   text-align: center;
   margin-top: 50px;
@@ -109,6 +110,7 @@ export default {
   width: 200px;
   height: 200px;
   object-fit: cover;
+  margin-top: 25px;
   margin-bottom: -50px;
 }
 
@@ -124,52 +126,17 @@ export default {
   margin-top: 50px;
 }
 
+/* About */
 .section-about {
   font-size: 14px;
   font-weight: 500;
   max-width: 800px;
   color: rgba(0, 0, 0, 0.850);
+  margin-bottom: 25px;
 }
 
-.projects {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-@media only screen and (max-width: 800px) {
-  .projects {
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-  }
-
-  .projects img {
-    width: 100%;
-    margin: 10px;
-  }
-
-  .projects p {
-    /* TODO: Fix this so that when the projects stack the text gets larger  */
-  }
-}
-
-.projects div {
-  text-align: center;
-  align-items: center;
-  word-wrap: break-word;
-  width: calc(33.33% - 10px);
-  margin-bottom: 20px;
-}
-
-.projects img {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  margin-bottom: 10px;
-}
-
-.section h2 {
+/* Projects */
+.section-projects h2 {
   font-size: 18px;
   font-weight: 500;
   color: #fff;
@@ -183,6 +150,40 @@ export default {
   margin-top: 50px;
 }
 
+.section-projects img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+/* Large screen */
+@media screen and (min-width: 800px) {
+  .section-projects div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+
+  .project {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    margin-right: 20px;
+    flex: 1;
+  }
+}
+
+/* Small screen */
+@media only screen and (max-width: 800px) {
+  .section-projects div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Footer */
 .footer h2 {
   font-size: 18px;
   font-weight: 500;
@@ -193,13 +194,13 @@ export default {
   justify-content: center;
   align-items: center;
   background-color: rgba(0, 0, 0, 0.850);
-  margin-bottom: 30px;
   margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 .footer {
+  text-align: center;
   padding-top: 25px;
   margin-bottom: 50px;
-  text-align: center;
 }
 </style>
