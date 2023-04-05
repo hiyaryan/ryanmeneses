@@ -67,7 +67,7 @@ export default {
         {
           name: 'SIMOC SAM',
           thumbnail: 'project-1-thumbnail.png',
-          description: ["At Over the Sun, I extended SIMOC, a habitat atmospheric and environmental simulation, enabling citizen scientists and classrooms to access a live data feed from SAM, a real-life hermetically sealed habitat, using Vue.js for the front-end and Python for the back-end. My role involved designing and implementing features to allow users to view and analyze data from Adafruit sensors measuring CO2, humidity, temperature, pressure, and VOC levels. The project's challenge was to create a user-friendly interface with data visualization tools, and the outcome was a contribution to space exploration and education."],
+          description: ["At Over the Sun, I extended SIMOC, a habitat atmospheric and environmental simulation hosted on NGS, enabling citizen scientists and classrooms to access a live data feed from SAM, a real-life hermetically sealed habitat, using Vue.js for the front-end and Python for the back-end. My role involved designing and implementing features to allow users to view and analyze data from Adafruit sensors measuring CO2, humidity, temperature, pressure, and VOC levels. The project's challenge was to create a user-friendly interface with data visualization tools, and the outcome was a contribution to space exploration and education."],
           ref: 'https://github.com/overthesun',
         },
         {
@@ -79,7 +79,7 @@ export default {
         {
           name: 'My Website',
           thumbnail: 'project-3-thumbnail.png',
-          description: ["I'm currently building my portfolio website using Vue.js and Nuxt.js, and I'm excited to share my journey with you. One of the reasons I decided to build this website publicly is that I wanted to showcase my skills and progress as a software engineer. By building this website in public, I'm able to share my coding process, learn from feedback, and connect with other developers. A new challenge I'm facing is building a webiste layout, style, and user experience. Overall, I'm proud of what I've accomplished so far, and I'm looking forward to sharing more updates on this project as I continue to develop and improve my skills."],
+          description: ["I'm currently building my portfolio website using Vue.js and Nuxt.js, and I'm excited to share my journey with you. One of the reasons I decided to build this website publicly is that I wanted to showcase my skills and progress as a software engineer. By building this website in public, I'm able to share my coding process, learn from feedback, and connect with other developers. A new challenge I'm facing is building a website layout, style, and user experience. Overall, I'm proud of what I've accomplished so far, and I'm looking forward to sharing more updates on this project as I continue to develop and improve my skills."],
           ref: 'https://github.com/hiyaryan/ryanmeneses',
         }
       ],
@@ -188,6 +188,7 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 30px;
   }
 }
 
