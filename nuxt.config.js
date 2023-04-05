@@ -3,6 +3,11 @@ export default {
     router: {
         base: '/ryanmeneses/pages/'
     },
+    buildModules: [
+        ['@nuxtjs/google-analytics', {
+            id: 'G-KHZ0ESCDDJ'
+        }]
+    ],
     head: {
         title: 'Ryan Meneses',
         meta: [
