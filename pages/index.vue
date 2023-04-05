@@ -22,6 +22,7 @@
           <img :src="`/img/${project.thumbnail}`" alt="" />
           <h3>{{ project.name }}</h3>
           <p v-for="description in project.description" :key="description">{{ description }}</p>
+          <a :href="`${project.ref}`" target="_blank">See more</a>
         </div>
       </div>
     </div>
@@ -66,17 +67,20 @@ export default {
         {
           name: 'SIMOC SAM',
           thumbnail: 'project-1-thumbnail.png',
-          description: ['Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus rhoncus ipsum sit amet laoreet maximus. Suspendisse vel lacinia ipsum. Duis ullamcorper est eget tellus pulvinar, vel malesuada tellus hendrerit. Nulla facilisi.'],
+          description: ["At Over the Sun, I extended SIMOC, a habitat atmospheric and environmental simulation, enabling citizen scientists and classrooms to access a live data feed from SAM, a real-life hermetically sealed habitat, using Vue.js for the front-end and Python for the back-end. My role involved designing and implementing features to allow users to view and analyze data from Adafruit sensors measuring CO2, humidity, temperature, pressure, and VOC levels. The project's challenge was to create a user-friendly interface with data visualization tools, and the outcome was a contribution to space exploration and education."],
+          ref: 'https://github.com/overthesun',
         },
         {
           name: 'QCS Quantum Circuits',
           thumbnail: 'project-2-thumbnail.png',
-          description: ["At Rigetti Computing, I used Rust for its memory safety and performance, to develop a software tool for visualizing quantum circuits through the company's quantum cloud services by serializing Quil, the assembly language of quantum computers, into LaTeX form. The LaTeX generated are quantum circuits which are graphical representations of quantum systems that are used to describe the flow of quantum information. This is an important tool for designing and analyzing quantum algorithms, that can be difficult to visualize.", "The Rust-based tool leverages Rigetti's quantum cloud services to access powerful quantum computing resources and perform complex calculations on quantum circuits. The tool provides the ability to visualize the structure of these quantum instructions. The output is a string of LaTeX utilizing the Quantikz package of which can be input into a LaTeX renderer that will help scientists and researchers better understand and analyze their programs that they feed into a quantum computer."],
+          description: ["At Rigetti Computing, I spearheaded a Rust-based tool that generates LaTeX-formatted quantum circuits, which are graphical representations of quantum systems used to visualize the flow of quantum information. The tool serializes Quil, the assembly language of quantum computers, into LaTeX form, and is accessible via the company's quantum cloud services (QCS). The tool provides a high-level abstraction of the structure of quantum instructions. This aids designers and researchers to analyze and design complex quantum algorithms before accessing valuable quantum computing resources."],
+          ref: 'https://github.com/rigetti/quil-rs/pull/145'
         },
         {
           name: 'My Website',
           thumbnail: 'project-3-thumbnail.png',
-          description: ["If you're looking at this website and it seems like it's not all put together, that's because I'm still working on it! You may see some Lorem Ipsum here and there but it's all part of the process. I've decided to build this website publicly so that I can share my journey. I'm excited to see where it takes me! :)"],
+          description: ["I'm currently building my portfolio website using Vue.js and Nuxt.js, and I'm excited to share my journey with you. One of the reasons I decided to build this website publicly is that I wanted to showcase my skills and progress as a software engineer. By building this website in public, I'm able to share my coding process, learn from feedback, and connect with other developers. A new challenge I'm facing is building a webiste layout, style, and user experience. Overall, I'm proud of what I've accomplished so far, and I'm looking forward to sharing more updates on this project as I continue to develop and improve my skills."],
+          ref: 'https://github.com/hiyaryan/ryanmeneses',
         }
       ],
       contact: 'Find me on ',
@@ -155,6 +159,10 @@ export default {
   height: 100px;
   border-radius: 50%;
   margin-bottom: 10px;
+}
+
+.section-projects a {
+  font-size: 14px;
 }
 
 /* Large screen */
