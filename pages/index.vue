@@ -15,7 +15,7 @@
       <h2>About Me</h2>
       <p v-for="paragraph in about" :key="paragraph">{{ paragraph }}</p>
     </div>
-    <p><i>"{{ quote.text }}"</i> – {{ quote.author }}</p>
+    <p class="quote"><i>"{{ quote.text }}"</i> – {{ quote.author }}</p>
     <div class="section-projects" id="projects">
       <h2>Projects</h2>
       <div>
@@ -167,6 +167,11 @@ export default {
 
 .header p {
   margin-top: 50px;
+}
+
+.quote {
+  text-align: center;
+  margin: 50px;
 }
 
 /* About */
