@@ -15,6 +15,7 @@
       <h2>About Me</h2>
       <p v-for="paragraph in about" :key="paragraph">{{ paragraph }}</p>
     </div>
+    <p><i>"{{ quote.text }}"</i> – {{ quote.author }}</p>
     <div class="section-projects" id="projects">
       <h2>Projects</h2>
       <div>
@@ -50,6 +51,35 @@ export default {
     NavBar
   },
 
+  beforeMount() {
+    // Fetch data from public APIs
+    fetch("https://type.fit/api/quotes")
+      .then(async response => {
+        const data = await response.json();
+
+        // check for error response
+        if (!response.ok) {
+          // get error message from body or default to response statusText
+          const error = (data && data.message) || response.statusText;
+          return Promise.reject(error);
+        }
+
+        let quote = this.get_random_quote(data);
+
+        this.quote.text = quote.text;
+
+        if (quote.author) {
+          this.quote.author = quote.author;
+        } else {
+          this.quote.author = "Unknown";
+        }
+      })
+      .catch(error => {
+        this.errorMessage = error;
+        console.error("Error fetching quote from https://forum.freecodecamp.org/t/free-api-inspirational-quotes-json-with-code-examples/311373", error);
+      });
+  },
+
   data() {
     return {
       pageContent: [
@@ -63,6 +93,7 @@ export default {
       tagline: 'Passionate about solving problems that lead to a better world.',
       location: 'San Francisco Bay Area',
       about: ["Hello there! Thank you for visiting my website! My name is Ryan, and I'm a software engineer who is passionate about using technology to help solve big questions and push humanity towards our maximum potential.", "Ever since I was a kid, I've been fascinated by the mysteries of the universe and the big questions that we as humans seek to answer. And as I grew older, I realized that technology could play a crucial role in helping us unravel some of these mysteries and push the boundaries of what we thought was possible.", "In my career as a software engineer, I've been fortunate to work on some incredible projects with some amazing people who have only fueled my desire to work on these types of problems. One project, for instance, is all about pushing humanity closer towards becoming an interplanetary species, while another deals with humanity's ability to harness the computational power of the atomic world.", "What excites me most about my work is the potential for technology to help us unlock new insights and discoveries that can push humanity towards its maximum potential. Whether we're developing new algorithms to help us understand the fundamental workings of the universe or creating tools to help us harness the power of artificial intelligence, I believe that we can make a real difference by working together to push the boundaries of what we thought was possible.", "When I'm not coding, I love exploring these spaces through the lenses of those outside of my industry. I'm very curious to see the workings and ideas of those approaching these problems from different angles. I'm also very interested in hearing the kinds of impacts new technologies and discoveries might pose on humanity alike.", "Overall, I'm thrilled to be a part of a community of thinkers and doers who are just as passionate as I am about using technology to make a positive impact on the world. So, let's join forces and keep pushing the boundaries together!"],
+      quote: { 'text': 'We are a way for the universe to know itself.', "author": 'Carl Sagan' },
       projects: [
         {
           name: 'SIMOC SAM',
@@ -88,7 +119,15 @@ export default {
       github: 'https://github.com/hiyaryan',
       year: new Date().getFullYear()
     }
-  }
+  },
+
+  methods: {
+    // Returns a random quote from a dictionary of quotes fetched from the public quotes API: https://type.fit/api/quotes
+    get_random_quote(quotes) {
+      let index = Math.random() * quotes.length;
+      return quotes[Math.ceil(index)]
+    }
+  },
 }
 </script>
 
