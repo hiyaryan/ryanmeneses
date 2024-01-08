@@ -1,2 +1,2 @@
 # ryanmeneses
-Publicly building my website.
+My personal website to showcase my work.
