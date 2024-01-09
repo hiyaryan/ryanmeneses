@@ -15,7 +15,12 @@
       <h2>About Me</h2>
       <p v-for="paragraph in about" :key="paragraph">{{ paragraph }}</p>
     </div>
-    <p class="quote"><i>"{{ quote.text }}"</i> – {{ quote.author }}</p>
+    <!-- FIXME: DOES NOT TRANSITION -->
+    <Transition name="fade" appear>
+      <p class="quote" @mouseover="getQuote()">"{{ quote.text }}" – {{ quote.author }}</p>
+    </Transition>
+    <button class="btn btn--main" @click="getHaiku()">Get Haiku</button>
+    <p id="hidden-haiku" hidden>{{ haiku }}</p>
     <div class="section-projects" id="projects">
       <h2>Projects</h2>
       <div>
@@ -53,8 +58,34 @@ export default {
   },
 
   beforeMount() {
-    // Get quote from public API
-    this.getQuote()
+    // Fetch data from public APIs
+    fetch("https://type.fit/api/quotes")
+      .then(async response => {
+        const data = await response.json()
+
+        // check for error response
+        if (!response.ok) {
+          // get error message from body or default to response statusText
+          const error = (data && data.message) || response.statusText
+          return Promise.reject(error)
+        }
+
+        let quote = this.get_random_quote(data)
+
+        this.quote.text = quote.text
+
+        if (quote.author) {
+          this.quote.author = quote.author
+        } else {
+          this.quote.author = "Unknown"
+        }
+      })
+
+
+      .catch(error => {
+        this.errorMessage = error
+        console.error("Error fetching quote from https://forum.freecodecamp.org/t/free-api-inspirational-quotes-json-with-code-examples/311373", error)
+      })
   },
 
   data() {
@@ -71,6 +102,7 @@ export default {
       location: content.location,
       about: content.about,
       quote: content.quote,
+      haiku: '',
       projects: content.projects,
       contact: content.contact,
       linkedin: content.linkedin,
@@ -100,12 +132,45 @@ export default {
           } else {
             this.quote.author = "Unknown"
           }
-        }).catch(error => {
-          this.errorMessage = error
-          console.error("Error fetching quote from https://forum.freecodecamp.org/t/free-api-inspirational-quotes-json-with-code-examples/311373", error)
         })
     },
 
+    getHaiku() {
+      // unhide id hidden-haiku
+      document.getElementById('hidden-haiku').style.display = 'block'
+
+      let prompt = "Given this information about " + this.name + ": " + this.about[0] + ", write a motivational haiku to " + this.name + " in the context of this quote: " + this.quote.text
+
+      console.log(prompt)
+
+      const url = 'https://ygdyx3u5m234obbfstcmhpezfi0kxgqy.lambda-url.us-west-1.on.aws/'
+
+      // fetch(url, {
+      //   headers: {
+      //     'Content-Type': 'application/json',
+      //     'Authorization': 'Basic ' + btoa('r:pAZSXazsx12!')
+      //   },
+      //   method: 'POST',
+      //   body: JSON.stringify({ input: prompt }),
+      // })
+      //   .then(response => response.json())
+      //   .then(data => this.haiku = data)
+      //   .catch(error => console.error(error))
+
+
+
+      // TEMPLATE
+      // const url = 'https://ygdyx3u5m234obbfstcmhpezfi0kxgqy.lambda-url.us-west-1.on.aws/'
+
+      fetch(url, {
+        method: 'POST',
+        body: prompt,
+      })
+        .then(response => response.json())
+        .then(data => console.log(data))
+        .catch(error => console.error(error))
+
+    },
     // Returns a random quote from a dictionary of quotes fetched from the public quotes API: https://type.fit/api/quotes
     get_random_quote(quotes) {
       let index = Math.random() * quotes.length
@@ -156,6 +221,16 @@ export default {
 .quote {
   text-align: center;
   margin: 50px;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
 }
 
 /* About */
