@@ -13,10 +13,16 @@ export default {
     quote: { 'text': 'We are a way for the universe to know itself.', "author": 'Carl Sagan' },
     projects: [
         {
-            name: 'SIMOC SAM',
-            thumbnail: 'project-1-thumbnail.png',
-            description: ["At Over the Sun, I extended SIMOC, a habitat atmospheric and environmental simulation hosted on NGS, enabling citizen scientists and classrooms to access a live data feed from SAM, a real-life hermetically sealed habitat, using Vue.js for the front-end and Python for the back-end. My role involved designing and implementing features to allow users to view and analyze data from Adafruit sensors measuring CO2, humidity, temperature, pressure, and VOC levels. The project's challenge was to create a user-friendly interface with data visualization tools, and the outcome was a contribution to space exploration and education."],
-            ref: 'https://github.com/overthesun',
+            name: 'The CDJ',
+            thumbnail: 'project-4-thumbnail.png',
+            description: ["I am developing The Cognitive Distortion Journal (CDJ) as a tool to address a common challenge in cognitive-behavioral therapy (CBT): the identification and reframing of distorted thinking. Motivated by the difficulty many face in managing cognitive distortions in real-time, I created this project as a Single Page Application (SPA) using React and Material UI. This approach ensures a seamless, interactive user experience. The backend, built with Node.js and Express, interfaces with a MongoDB database through a RESTful API, offering robust data management. My aim was to provide an effective, intuitive tool for mental health interventions, leveraging modern web technologies."],
+            ref: 'https://github.com/hiyaryan/the-cdj',
+        },
+        {
+            name: 'My Website',
+            thumbnail: 'project-3-thumbnail.png',
+            description: ["I'm currently building my portfolio website using Vue.js and Nuxt.js, and I'm excited to share my journey with you. One of the reasons I decided to build this website publicly is that I wanted to showcase my skills and progress as a software engineer. By building this website in public, I'm able to share my coding process, learn from feedback, and connect with other developers. A new challenge I'm facing is building a website layout, style, and user experience. Overall, I'm proud of what I've accomplished so far, and I'm looking forward to sharing more updates on this project as I continue to develop and improve my skills."],
+            ref: 'https://github.com/hiyaryan/ryanmeneses',
         },
         {
             name: 'QCS Quantum Circuits',
@@ -25,10 +31,10 @@ export default {
             ref: 'https://github.com/rigetti/quil-rs/pull/145'
         },
         {
-            name: 'My Website',
-            thumbnail: 'project-3-thumbnail.png',
-            description: ["I'm currently building my portfolio website using Vue.js and Nuxt.js, and I'm excited to share my journey with you. One of the reasons I decided to build this website publicly is that I wanted to showcase my skills and progress as a software engineer. By building this website in public, I'm able to share my coding process, learn from feedback, and connect with other developers. A new challenge I'm facing is building a website layout, style, and user experience. Overall, I'm proud of what I've accomplished so far, and I'm looking forward to sharing more updates on this project as I continue to develop and improve my skills."],
-            ref: 'https://github.com/hiyaryan/ryanmeneses',
+            name: 'SIMOC SAM',
+            thumbnail: 'project-1-thumbnail.png',
+            description: ["At Over the Sun, I extended SIMOC, a habitat atmospheric and environmental simulation hosted on NGS, enabling citizen scientists and classrooms to access a live data feed from SAM, a real-life hermetically sealed habitat, using Vue.js for the front-end and Python for the back-end. My role involved designing and implementing features to allow users to view and analyze data from Adafruit sensors measuring CO2, humidity, temperature, pressure, and VOC levels. The project's challenge was to create a user-friendly interface with data visualization tools, and the outcome was a contribution to space exploration and education."],
+            ref: 'https://github.com/overthesun',
         }
     ],
     contact: 'Find me on ',
