@@ -7,9 +7,16 @@ export default {
     ],
     name: 'Ryan Meneses',
     title: 'Software Engineer',
-    tagline: 'Passionate about solving problems that lead to a better world.',
+    tagline: 'On a mission to explore new frontiers in technology and passionately forge a path to a brighter future.',
     location: 'San Francisco Bay Area',
-    about: ["Hello there! Thank you for visiting my website! My name is Ryan, and I'm a software engineer who is passionate about using technology to help solve big questions and push humanity towards our maximum potential.", "Ever since I was a kid, I've been fascinated by the mysteries of the universe and the big questions that we as humans seek to answer. And as I grew older, I realized that technology could play a crucial role in helping us unravel some of these mysteries and push the boundaries of what we thought was possible.", "In my career as a software engineer, I've been fortunate to work on some incredible projects with some amazing people who have only fueled my desire to work on these types of problems. One project, for instance, is all about pushing humanity closer towards becoming an interplanetary species, while another deals with humanity's ability to harness the computational power of the atomic world.", "What excites me most about my work is the potential for technology to help us unlock new insights and discoveries that can push humanity towards its maximum potential. Whether we're developing new algorithms to help us understand the fundamental workings of the universe or creating tools to help us harness the power of artificial intelligence, I believe that we can make a real difference by working together to push the boundaries of what we thought was possible.", "When I'm not coding, I love exploring these spaces through the lenses of those outside of my industry. I'm very curious to see the workings and ideas of those approaching these problems from different angles. I'm also very interested in hearing the kinds of impacts new technologies and discoveries might pose on humanity alike.", "Overall, I'm thrilled to be a part of a community of thinkers and doers who are just as passionate as I am about using technology to make a positive impact on the world. So, let's join forces and keep pushing the boundaries together!"],
+    about: [
+        "Hi there! Thanks for stopping by. I'm Ryan, a software engineer with a big heart for technology and its power to change the world for the better. It's not just my job; it's my passion.",
+        "Ever since I can remember, the universe's mysteries and our place in it have kept me up at night. Growing up, I realized that technology isn't just a tool, but a gateway to answering some of life's biggest questions and pushing the limits of what we think is possible.",
+        "I've had the amazing opportunity to work on projects that aren't just about code, but about dreams – like helping humanity set foot on other planets, or tapping into the mind-blowing potential of quantum computing. Working with brilliant minds in these fields has been nothing short of inspiring.",
+        "What really gets me excited is the thought of how technology can open doors to new discoveries. Whether it's developing smart algorithms to decode the universe or creating AI that might one day think like us, I believe we're on the cusp of something huge.",
+        "When I'm not in front of a computer screen, I love diving into discussions with people from different walks of life. Their perspectives on these big technological leaps and how they see them shaping our future are always eye-opening.",
+        "In a nutshell, I'm thrilled to be part of this incredible journey with fellow thinkers and innovators. We're in this together, pushing the boundaries of what's possible. Let's keep the momentum going and see where this path takes us!"
+    ],
     quote: { 'text': 'We are a way for the universe to know itself.', "author": 'Carl Sagan' },
     projects: [
         {
@@ -19,9 +26,9 @@ export default {
             ref: 'https://github.com/hiyaryan/the-cdj',
         },
         {
-            name: 'My Website',
+            name: 'This Website',
             thumbnail: 'project-3-thumbnail.png',
-            description: ["I'm currently building my portfolio website using Vue.js and Nuxt.js, and I'm excited to share my journey with you. One of the reasons I decided to build this website publicly is that I wanted to showcase my skills and progress as a software engineer. By building this website in public, I'm able to share my coding process, learn from feedback, and connect with other developers. A new challenge I'm facing is building a website layout, style, and user experience. Overall, I'm proud of what I've accomplished so far, and I'm looking forward to sharing more updates on this project as I continue to develop and improve my skills."],
+            description: ["My website is powered by Vue.js and Nuxt.js, and it's designed as a static webpage hosted on GitHub Pages. Its purpose is to professionally showcase my software engineering skills and projects. The use of Vue.js and Nuxt.js ensures that the site is dynamic, robust, and efficient in terms of user experience. It presents my work and achievements in a clear, simple, and accessible format, demonstrating my proficiency in modern web development technologies. Additionally, this website was co-developed with the help of ChatGPT, highlighting my skills in prompt engineering and my ability to integrate AI tools into software development."],
             ref: 'https://github.com/hiyaryan/ryanmeneses',
         },
         {

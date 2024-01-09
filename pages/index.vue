@@ -5,10 +5,10 @@
   <div class="landing-page" id="home">
     <NavBar :pageContent="pageContent" />
     <div class="header">
-      <img :src="`/img/me.png`" alt="" />
+      <img :src="githubProfilePic" alt="GitHub Profile Picture" />
       <h1>{{ name }}</h1>
       <h2>{{ title }}</h2>
-      <h5> {{ location }} </h5>
+      <h5>{{ location }}</h5>
       <p>{{ tagline }}</p>
     </div>
     <div class="section-about" id="about">
@@ -52,9 +52,9 @@ export default {
     NavBar
   },
 
-  beforeMount() {
-    // Get quote from public API
-    this.getQuote()
+  mounted() {
+    this.fetchGitHubProfile();
+    this.getQuote();
   },
 
   data() {
@@ -75,7 +75,8 @@ export default {
       contact: content.contact,
       linkedin: content.linkedin,
       github: content.github,
-      year: new Date().getFullYear()
+      year: new Date().getFullYear(),
+      githubProfilePic: '', // New property for GitHub profile picture URL
     }
   },
 
@@ -96,13 +97,13 @@ export default {
           this.quote.text = quote.text
 
           if (quote.author) {
-            this.quote.author = quote.author
+            this.quote.author = quote.author.split(",")[0]
           } else {
             this.quote.author = "Unknown"
           }
         }).catch(error => {
           this.errorMessage = error
-          console.error("Error fetching quote from https://forum.freecodecamp.org/t/free-api-inspirational-quotes-json-with-code-examples/311373", error)
+          console.error("Error fetching quote from https://type.fit/api/quotes", error)
         })
     },
 
@@ -110,7 +111,16 @@ export default {
     get_random_quote(quotes) {
       let index = Math.random() * quotes.length
       return quotes[Math.ceil(index)]
-    }
+    },
+
+    fetchGitHubProfile() {
+      fetch(`https://api.github.com/users/hiyaryan`)
+        .then(response => response.json())
+        .then(data => {
+          this.githubProfilePic = data.avatar_url; // Set the profile picture URL
+        })
+        .catch(error => console.error('Error fetching GitHub profile:', error));
+    },
   },
 }
 </script>
