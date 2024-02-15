@@ -6,6 +6,7 @@ import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
 import Divider from "@mui/material/Divider";
+import Fade from "@mui/material/Fade";
 
 import { useEffect, useState } from "react";
 import { useNotionData } from "../../../hooks/useNotionData";
@@ -45,77 +46,79 @@ export default function Projects() {
     <Box>
       {projects.map((project, index) => {
         return (
-          <Card
-            key={index}
-            sx={{
-              display: "flex",
-              flexDirection: { xs: "column", sm: "row" },
-              boxShadow: 2,
-              m: "0.5em",
-              p: { xs: 0, sm: "1em" },
-            }}
-          >
-            <Container>
-              <Avatar
-                alt="project thumbnail"
-                src={project.thumbnail}
-                sx={{
-                  alignSelf: { xs: "center" },
-                  height: { xs: "100%", sm: 150 },
-                  width: { xs: "100%", sm: 250 },
-                  borderRadius: "2%",
-                  boxShadow: 5,
-                  ":hover": {
-                    sm: {
-                      transform: "scale(1) translate(10px, -5%)",
-                      height: "100%",
-                      width: "100%",
-                      transition: "transform 1s, width 0.25s, height 0.5s",
-                      zIndex: 1,
-                    },
-                  },
-                }}
-              />
-            </Container>
-            <Container>
-              <Box sx={{ flexDirection: "column" }}>
-                <Typography sx={{ mb: 2, fontWeight: 600 }} variant="h3">
-                  {project.title}
-                </Typography>
-                <Divider
+          <Fade key={index} in={true} timeout={2000}>
+            <Card
+              key={index}
+              sx={{
+                display: "flex",
+                flexDirection: { xs: "column", sm: "row" },
+                boxShadow: 2,
+                m: "0.5em",
+                p: { xs: 0, sm: "1em" },
+              }}
+            >
+              <Container>
+                <Avatar
+                  alt="project thumbnail"
+                  src={project.thumbnail}
                   sx={{
-                    my: 2,
-                    maxWidth: { xs: "100%", sm: "50%" },
+                    alignSelf: { xs: "center" },
+                    height: { xs: "100%", sm: 150 },
+                    width: { xs: "100%", sm: 250 },
+                    borderRadius: "2%",
+                    boxShadow: 5,
+                    ":hover": {
+                      sm: {
+                        transform: "scale(1) translate(10px, -5%)",
+                        height: "100%",
+                        width: "100%",
+                        transition: "transform 1s, width 0.25s, height 0.5s",
+                        zIndex: 1,
+                      },
+                    },
                   }}
                 />
-                <Typography variant="body1">{project.details}</Typography>
-                <Box sx={{ display: "flex", flexDirection: "row", mt: 2 }}>
-                  <Box sx={{ mr: 2 }}>
-                    {project.github && (
-                      <Link
-                        href={project.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        GitHub
-                      </Link>
-                    )}
-                  </Box>
-                  <Box>
-                    {project.url && (
-                      <Link
-                        href={project.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        Website
-                      </Link>
-                    )}
+              </Container>
+              <Container>
+                <Box sx={{ flexDirection: "column" }}>
+                  <Typography sx={{ mb: 2, fontWeight: 600 }} variant="h3">
+                    {project.title}
+                  </Typography>
+                  <Divider
+                    sx={{
+                      my: 2,
+                      maxWidth: { xs: "100%", sm: "50%" },
+                    }}
+                  />
+                  <Typography variant="body1">{project.details}</Typography>
+                  <Box sx={{ display: "flex", flexDirection: "row", mt: 2 }}>
+                    <Box sx={{ mr: 2 }}>
+                      {project.github && (
+                        <Link
+                          href={project.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          GitHub
+                        </Link>
+                      )}
+                    </Box>
+                    <Box>
+                      {project.url && (
+                        <Link
+                          href={project.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Website
+                        </Link>
+                      )}
+                    </Box>
                   </Box>
                 </Box>
-              </Box>
-            </Container>
-          </Card>
+              </Container>
+            </Card>
+          </Fade>
         );
       })}
     </Box>
