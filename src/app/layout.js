@@ -1,4 +1,4 @@
-import { AppRouterCacheProvider } from '@mui/material-nextjs/v13-appRouter';
+import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
 
 import { Inter } from "next/font/google";
 import "./globals.css";
@@ -8,8 +8,8 @@ import defaultTheme from "../styles/theme";
 import CssBaseline from "@mui/material/CssBaseline";
 import Box from "@mui/material/Box";
 
-import NavBar from "@/components/NavBar"
-import StickyFooter from "@/components/StickyFooter"
+import NavBar from "@/components/NavBar";
+import StickyFooter from "@/components/StickyFooter";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -25,11 +25,13 @@ export default function RootLayout({ children }) {
         <ThemeProvider theme={defaultTheme}>
           <CssBaseline />
           <AppRouterCacheProvider>
-            <Box sx={{
-              display: "flex",
-              flexDirection: "column",
-              minHeight: "100vh"
-            }} >
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                minHeight: "100vh",
+              }}
+            >
               <NavBar />
               {children}
               <StickyFooter />
