@@ -15,7 +15,21 @@ exports.handler = async function (event) {
   }
 
   try {
-    const response = await notion.databases.query({ database_id: databaseId });
+    let allResults = [];
+    let hasMore = true;
+    let startCursor = undefined;
+
+    while (hasMore) {
+      const response = await notion.databases.query({
+        database_id: databaseId,
+        start_cursor: startCursor,
+      });
+
+      allResults.push(...response.results);
+      hasMore = response.has_more;
+      startCursor = response.next_cursor;
+    }
+
     return {
       statusCode: 200,
       headers: {
@@ -23,7 +37,7 @@ exports.handler = async function (event) {
         "Access-Control-Allow-Methods": "GET, OPTIONS",
         "Access-Control-Allow-Headers": "Content-Type",
       },
-      body: JSON.stringify(response.results[0].properties),
+      body: JSON.stringify(allResults),
     };
   } catch (error) {
     console.error(error);
