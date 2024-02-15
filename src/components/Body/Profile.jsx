@@ -33,7 +33,9 @@ export default function Profile() {
 
   useEffect(() => {
     const getAbout = async () => {
-      const data = await fetchNotionData(process.env.NEXT_PUBLIC_DB_PROFILE);
+      let data = await fetchNotionData(process.env.NEXT_PUBLIC_DB_PROFILE).then(
+        (data) => data[0].properties
+      );
 
       const profilePicture = data["profilePicture"].files[0].file.url;
       const fullName = data["fullName"].rich_text[0].plain_text;

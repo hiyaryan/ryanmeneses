@@ -12,7 +12,9 @@ export default function About() {
 
   useEffect(() => {
     const getAbout = async () => {
-      const data = await fetchNotionData(process.env.NEXT_PUBLIC_DB_ABOUT);
+      const data = await fetchNotionData(process.env.NEXT_PUBLIC_DB_ABOUT).then(
+        (data) => data[0].properties
+      );
 
       const about = data["paragraph"].rich_text[0].plain_text.split("\n\n");
 
