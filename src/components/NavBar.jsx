@@ -25,7 +25,7 @@ export default function NavBar() {
   };
 
   const handleCloseNavMenu = (page) => {
-    router.push(`/${page.toLowerCase()}`);
+    if (page) router.push(`/${page.toLowerCase()}`);
     setAnchorElNav(null);
   };
 
@@ -79,7 +79,7 @@ export default function NavBar() {
                 horizontal: "left",
               }}
               open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
+              onClose={() => handleCloseNavMenu(null)}
               sx={{
                 display: { xs: "block", md: "none" },
               }}
