@@ -30,9 +30,9 @@ export default function About() {
             width: { xs: "100%", sm: "80%" },
         }}>
             <Container>
-                <Typography variant="h2" fontWeight="600">
+                {about.length !== 0 && <Typography variant="h2" fontWeight="600">
                     About Me
-                </Typography>
+                </Typography>}
             </Container>
             <Container>
                 <Box height="80%" overflow="auto">
