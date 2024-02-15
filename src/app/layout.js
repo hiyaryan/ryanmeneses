@@ -6,6 +6,10 @@ import "./globals.css";
 import { ThemeProvider } from "@mui/material/styles";
 import defaultTheme from "../styles/theme";
 import CssBaseline from "@mui/material/CssBaseline";
+import Box from "@mui/material/Box";
+
+import NavBar from "@/components/NavBar"
+import StickyFooter from "@/components/StickyFooter"
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,7 +25,15 @@ export default function RootLayout({ children }) {
         <ThemeProvider theme={defaultTheme}>
           <CssBaseline />
           <AppRouterCacheProvider>
-            {children}
+            <Box sx={{
+              display: "flex",
+              flexDirection: "column",
+              minHeight: "100vh"
+            }} >
+              <NavBar />
+              {children}
+              <StickyFooter />
+            </Box>
           </AppRouterCacheProvider>
         </ThemeProvider>
       </body>

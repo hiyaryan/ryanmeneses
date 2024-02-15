@@ -12,17 +12,20 @@ import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import CoffeeOutlinedIcon from '@mui/icons-material/CoffeeOutlined';
+import { useRouter } from 'next/navigation'
 
 const pages = ['Projects'];
 
 export default function NavBar() {
     const [anchorElNav, setAnchorElNav] = React.useState(null);
+    const router = useRouter()
 
     const handleOpenNavMenu = (event) => {
         setAnchorElNav(event.currentTarget);
     };
 
-    const handleCloseNavMenu = () => {
+    const handleCloseNavMenu = (page) => {
+        router.push(`/${ page.toLowerCase() }`)
         setAnchorElNav(null);
     };
 
@@ -80,7 +83,7 @@ export default function NavBar() {
                             }}
                         >
                             {pages.map((page) => (
-                                <MenuItem key={page} onClick={handleCloseNavMenu}>
+                                <MenuItem key={page} onClick={() => handleCloseNavMenu(page)}>
                                     <Typography textAlign="center">{page}</Typography>
                                 </MenuItem>
                             ))}
@@ -110,7 +113,7 @@ export default function NavBar() {
                         {pages.map((page) => (
                             <Button
                                 key={page}
-                                onClick={handleCloseNavMenu}
+                                onClick={() => handleCloseNavMenu(page)}
                                 sx={{ my: 2, color: 'white', display: 'block' }}
                             >
                                 {page}
