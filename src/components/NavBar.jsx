@@ -14,7 +14,7 @@ import MenuItem from "@mui/material/MenuItem";
 import CoffeeOutlinedIcon from "@mui/icons-material/CoffeeOutlined";
 import { useRouter } from "next/navigation";
 
-const pages = ["Projects"];
+const pages = ["Projects", "Contact"];
 
 export default function NavBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
