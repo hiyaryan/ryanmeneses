@@ -41,7 +41,7 @@ export default function About() {
         )}
       </Container>
       <Container>
-        <Box height="80%" overflow="auto">
+        <Box height={{ md: "35vh" }} overflow="auto" mb={2}>
           {about.map((line, index) => {
             return (
               <Typography key={index} variant="body1" mb={2}>
