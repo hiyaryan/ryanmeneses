@@ -166,10 +166,15 @@ export default function Contact() {
 
   return (
     <Container>
-      <Grid container>
+      <Grid
+        container
+        sx={{
+          ml: { sm: 4 },
+        }}
+      >
         {contacts.map((contact, index) => {
           return (
-            <Grid item key={index} xs={12} sm={6}>
+            <Grid item key={index} xs={12} md={6}>
               <Box
                 sx={{
                   mb: { xs: 2, sm: 4 },
