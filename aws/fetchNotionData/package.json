@@ -1,0 +1,14 @@
+{
+  "name": "aws",
+  "version": "1.0.0",
+  "description": "AWS lambda functions.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ryan Meneses",
+  "license": "ISC",
+  "dependencies": {
+    "@notionhq/client": "^2.2.14"
+  }
+}
